@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.homegarden_miot.menu.HomeFragment"
+        android:label="Accueil"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_help"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_home_to_account"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_home_to_arrosage"
+            app:destination="@id/wateringFragment" />
+        <action
+            android:id="@+id/action_home_to_luminosite"
+            app:destination="@id/brightnessFragment" />
+        <action
+            android:id="@+id/action_home_to_eau"
+            app:destination="@id/waterFragment" />
+        <action
+            android:id="@+id/action_home_to_engrais"
+            app:destination="@id/fertilizerFragment" />
+        <action
+            android:id="@+id/action_home_to_connect"
+            app:destination="@id/connectFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.homegarden_miot.menu.HelpFragment"
+        android:label="Conseils"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_help_to_home"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_help_to_account"
+            app:destination="@id/accountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.homegarden_miot.menu.AccountFragment"
+        android:label="Compte"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_account_to_home"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_account_to_help"
+            app:destination="@id/helpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wateringFragment"
+        android:name="com.example.homegarden_miot.homePage.WateringFragment"
+        android:label="Arrosage"
+        tools:layout="@layout/fragment_watering">
+        <action
+            android:id="@+id/action_arrosage_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/brightnessFragment"
+        android:name="com.example.homegarden_miot.homePage.BrightnessFragment"
+        android:label="Luminosité"
+        tools:layout="@layout/fragment_brightness">
+        <action
+            android:id="@+id/action_luminosite_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/waterFragment"
+        android:name="com.example.homegarden_miot.homePage.WaterFragment"
+        android:label="Eau"
+        tools:layout="@layout/fragment_water">
+        <action
+            android:id="@+id/action_eau_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fertilizerFragment"
+        android:name="com.example.homegarden_miot.homePage.FertilizerFragment"
+        android:label="Engrais"
+        tools:layout="@layout/fragment_fertilizer">
+        <action
+            android:id="@+id/action_engrais_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/connectFragment"
+        android:name="com.example.homegarden_miot.homePage.ConnectFragment"
+        android:label="Connexion"
+        tools:layout="@layout/fragment_connect">
+        <action
+            android:id="@+id/action_connect_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+</navigation>
