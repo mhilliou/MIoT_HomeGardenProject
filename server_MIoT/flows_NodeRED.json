@@ -1,0 +1,1314 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d65c271f670f48fe",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"waterLevel\":50}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "56c83e66ac7c1a67"
+            ]
+        ]
+    },
+    {
+        "id": "aca848cd40122ebd",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/activePump",
+        "url": "/activePump",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 250,
+        "y": 1860,
+        "wires": [
+            [
+                "485c70918f9a7ea5"
+            ]
+        ]
+    },
+    {
+        "id": "166ffaddba23f91f",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "activePump response",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1180,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "8568591f0fa45fb0",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Requêtes HTTP",
+        "info": "",
+        "x": 240,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "144d906ae8bec88d",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[get]/temperature",
+        "url": "/temperature",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 1500,
+        "wires": [
+            [
+                "100f2659f76b93e2"
+            ]
+        ]
+    },
+    {
+        "id": "2d2d4646f68d9e6a",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "temperature response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1140,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "93782c9ccafc272b",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/pumpMode",
+        "url": "/pumpMode",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 250,
+        "y": 900,
+        "wires": [
+            [
+                "47262e27ac0231d4"
+            ]
+        ]
+    },
+    {
+        "id": "edb26dea2e885178",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "pumpMode response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1180,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "65aefe1badc3127c",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/lightMode",
+        "url": "/lightMode",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 1000,
+        "wires": [
+            [
+                "66e88593cdf4bf34"
+            ]
+        ]
+    },
+    {
+        "id": "7b5b349af35a9445",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "lightMode response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1180,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "998b3f4babb7e3f7",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/activeLight",
+        "url": "/activeLight",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 1100,
+        "wires": [
+            [
+                "34947f0adbae634f"
+            ]
+        ]
+    },
+    {
+        "id": "68a1a4ad0f85fecc",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "activeLight response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1180,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "44c0d5b1b3d0ab94",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/scheduledLight",
+        "url": "/scheduledLight",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 260,
+        "y": 2020,
+        "wires": [
+            [
+                "d8a554a6cf86bfe1",
+                "37a28d6c0e4e5ab0",
+                "b0f122cacc58c025"
+            ]
+        ]
+    },
+    {
+        "id": "d8a554a6cf86bfe1",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "scheduledLight response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "9264bdf9ea1bb5cb",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/intensity",
+        "url": "/intensity",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 1780,
+        "wires": [
+            [
+                "4e3e4887fb898201"
+            ]
+        ]
+    },
+    {
+        "id": "88cd0bb852053e37",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "intensity response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1170,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "72aea39b961f6588",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[get]/waterLevelActual",
+        "url": "/waterLevelActual",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 260,
+        "y": 1420,
+        "wires": [
+            [
+                "ccc614b5213556f3"
+            ]
+        ]
+    },
+    {
+        "id": "ac116b6d85a13f99",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "waterLevelActual response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1140,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "485c70918f9a7ea5",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload.active_pump",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 470,
+        "y": 1860,
+        "wires": [
+            [
+                "166ffaddba23f91f",
+                "b0f122cacc58c025",
+                "3c7279e1db956d57",
+                "ec9628e114fda7f0"
+            ],
+            [
+                "cf4e32dc1a8c71de"
+            ]
+        ]
+    },
+    {
+        "id": "f1a9b431171f05c5",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "error response",
+        "statusCode": "400",
+        "headers": {},
+        "x": 1700,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "cf4e32dc1a8c71de",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "error input process",
+        "func": "msg.payload=\"ERROR_BAD_INPUT\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1530,
+        "y": 960,
+        "wires": [
+            [
+                "f1a9b431171f05c5"
+            ]
+        ]
+    },
+    {
+        "id": "47262e27ac0231d4",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload.pump_mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "manual",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "automatic",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 470,
+        "y": 900,
+        "wires": [
+            [
+                "edb26dea2e885178",
+                "be865d5c2320780e"
+            ],
+            [
+                "edb26dea2e885178",
+                "be865d5c2320780e"
+            ],
+            [
+                "cf4e32dc1a8c71de"
+            ]
+        ]
+    },
+    {
+        "id": "66e88593cdf4bf34",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload.light_mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "manual",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "automatic",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 470,
+        "y": 1000,
+        "wires": [
+            [
+                "7b5b349af35a9445",
+                "be865d5c2320780e"
+            ],
+            [
+                "7b5b349af35a9445",
+                "be865d5c2320780e"
+            ],
+            [
+                "cf4e32dc1a8c71de"
+            ]
+        ]
+    },
+    {
+        "id": "34947f0adbae634f",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload.active_light",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 470,
+        "y": 1100,
+        "wires": [
+            [
+                "68a1a4ad0f85fecc"
+            ],
+            [
+                "68a1a4ad0f85fecc"
+            ],
+            [
+                "cf4e32dc1a8c71de"
+            ]
+        ]
+    },
+    {
+        "id": "4e3e4887fb898201",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload.intensity",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "0",
+                "vt": "num",
+                "v2": "100",
+                "v2t": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 760,
+        "y": 1780,
+        "wires": [
+            [
+                "88cd0bb852053e37",
+                "9d2bcfe2cb5409ca",
+                "b0f122cacc58c025"
+            ],
+            [
+                "cf4e32dc1a8c71de"
+            ]
+        ]
+    },
+    {
+        "id": "11cf5c9089ac9b6e",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[get]/humidity",
+        "url": "/humidity",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 1580,
+        "wires": [
+            [
+                "8126175a7e407722"
+            ]
+        ]
+    },
+    {
+        "id": "03c8e14ad062968e",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "humidity response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1110,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "ccc614b5213556f3",
+        "type": "firebase-get",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "constraint": {},
+        "database": "09d95dada896272c",
+        "outputType": "string",
+        "passThrough": true,
+        "path": "/waterLevel",
+        "pathType": "str",
+        "useConstraint": false,
+        "x": 470,
+        "y": 1420,
+        "wires": [
+            [
+                "ac116b6d85a13f99"
+            ]
+        ]
+    },
+    {
+        "id": "100f2659f76b93e2",
+        "type": "firebase-get",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "constraint": {},
+        "database": "09d95dada896272c",
+        "outputType": "string",
+        "passThrough": true,
+        "path": "/temperature",
+        "pathType": "str",
+        "useConstraint": false,
+        "x": 470,
+        "y": 1500,
+        "wires": [
+            [
+                "2d2d4646f68d9e6a"
+            ]
+        ]
+    },
+    {
+        "id": "8126175a7e407722",
+        "type": "firebase-get",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "constraint": {},
+        "database": "09d95dada896272c",
+        "outputType": "string",
+        "passThrough": true,
+        "path": "/humidity",
+        "pathType": "str",
+        "useConstraint": false,
+        "x": 460,
+        "y": 1580,
+        "wires": [
+            [
+                "03c8e14ad062968e"
+            ]
+        ]
+    },
+    {
+        "id": "56c83e66ac7c1a67",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "09d95dada896272c",
+        "path": "/",
+        "pathType": "str",
+        "priority": 1,
+        "queryType": "update",
+        "x": 570,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "58f59fc166c4bccb",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "769e5542759c6bca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "12b3ccb0997821ab"
+            ]
+        ]
+    },
+    {
+        "id": "bfe360dc67b69af4",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "test",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769e5542759c6bca",
+        "x": 450,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "34796ece7a8751f7",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"waterLevel\":50}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "bfe360dc67b69af4"
+            ]
+        ]
+    },
+    {
+        "id": "f55d40b41ba1b76e",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "09d95dada896272c",
+        "path": "/",
+        "pathType": "str",
+        "priority": 1,
+        "queryType": "update",
+        "x": 810,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "12b3ccb0997821ab",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 1",
+        "func": "const res = JSON.parse(`{\"temperature\":${msg.payload}}`)\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "389cb41eeb42e5a4",
+                "f55d40b41ba1b76e"
+            ]
+        ]
+    },
+    {
+        "id": "389cb41eeb42e5a4",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5c0035076c2bbc74",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Partie Laboratoire",
+        "info": "",
+        "x": 230,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d59b283739315ebf",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Intéraction MQTT NodeRED",
+        "info": "",
+        "x": 280,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "73edc8e85c870675",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Send Luminosity Sensor Data",
+        "topic": "send/luminosity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "769e5542759c6bca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 2260,
+        "wires": [
+            [
+                "9c71dd169100ac5a"
+            ]
+        ]
+    },
+    {
+        "id": "9c71dd169100ac5a",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "luminosity sending function",
+        "func": "const res = JSON.parse(`{\"luminosity\":${msg.payload}}`)\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 2260,
+        "wires": [
+            [
+                "ccaf966adc0f65d6",
+                "e4db5f23549ee40d"
+            ]
+        ]
+    },
+    {
+        "id": "ccaf966adc0f65d6",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "09d95dada896272c",
+        "path": "/",
+        "pathType": "str",
+        "priority": 1,
+        "queryType": "update",
+        "x": 1130,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "e4db5f23549ee40d",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug : luminosity sending",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "15dc721dad16af9c",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Send Button Data",
+        "topic": "send/button",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "769e5542759c6bca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 2360,
+        "wires": [
+            [
+                "fe7bc5ac866bab62"
+            ]
+        ]
+    },
+    {
+        "id": "fe7bc5ac866bab62",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "button sending function",
+        "func": "const res = JSON.parse(`{\"button\":${msg.payload}}`)\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 2360,
+        "wires": [
+            [
+                "ccaf966adc0f65d6"
+            ]
+        ]
+    },
+    {
+        "id": "1e07b8dc05d9d421",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Send Temperature Sensor Data",
+        "topic": "send/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "769e5542759c6bca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 2460,
+        "wires": [
+            [
+                "d44aa083961a8452"
+            ]
+        ]
+    },
+    {
+        "id": "d44aa083961a8452",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "temperature sending function",
+        "func": "const res = JSON.parse(`{\"temperature\":${msg.payload}}`)\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 2460,
+        "wires": [
+            [
+                "ccaf966adc0f65d6"
+            ]
+        ]
+    },
+    {
+        "id": "3752146cc0cd7394",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Send Humidity Sensor Data",
+        "topic": "send/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "769e5542759c6bca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 2560,
+        "wires": [
+            [
+                "26f3e4822452a0b7"
+            ]
+        ]
+    },
+    {
+        "id": "a3387bf44ea89758",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "humidity sending function",
+        "func": "const res = JSON.parse(`{\"humidity\":${msg.payload}}`)\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 2560,
+        "wires": [
+            [
+                "ccaf966adc0f65d6"
+            ]
+        ]
+    },
+    {
+        "id": "2c49b9aafac87e1c",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Send Water Level Sensor Data",
+        "topic": "send/waterLevel",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "769e5542759c6bca",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 2780,
+        "wires": [
+            [
+                "131abdc5e5ca6dfa"
+            ]
+        ]
+    },
+    {
+        "id": "131abdc5e5ca6dfa",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "waterLevel sending function",
+        "func": "const lvl = (parseInt(msg.payload)/25);\nconst litter = lvl * 16;\nconst res = JSON.parse(`{\"waterLevel\":${litter.toString()}}`)\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 2780,
+        "wires": [
+            [
+                "ccaf966adc0f65d6"
+            ]
+        ]
+    },
+    {
+        "id": "9d2bcfe2cb5409ca",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "receive/led",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769e5542759c6bca",
+        "x": 1030,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "351835a63d9bf733",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Intéraction intermédiaire MQTT NodeRED HTTP",
+        "info": "",
+        "x": 340,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "ec9628e114fda7f0",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "receive/pump",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769e5542759c6bca",
+        "x": 940,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "29c730f53c948042",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "receive/scheduledPump",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769e5542759c6bca",
+        "x": 870,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "8688854f1727ab28",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "scheduledPump response",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "54782584f5ac4aae",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "[post]/scheduledPump",
+        "url": "/scheduledPump",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 260,
+        "y": 1940,
+        "wires": [
+            [
+                "8688854f1727ab28",
+                "29c730f53c948042",
+                "b0f122cacc58c025"
+            ]
+        ]
+    },
+    {
+        "id": "37a28d6c0e4e5ab0",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "receive/scheduledLight",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769e5542759c6bca",
+        "x": 860,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "be865d5c2320780e",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "09d95dada896272c",
+        "path": "/",
+        "pathType": "str",
+        "priority": 1,
+        "queryType": "update",
+        "x": 1090,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "26f3e4822452a0b7",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "2000",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 500,
+        "y": 2560,
+        "wires": [
+            [
+                "a3387bf44ea89758"
+            ],
+            [
+                "10de1506cfaa57ed"
+            ]
+        ]
+    },
+    {
+        "id": "6a826d6f8d7d39c6",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "receive/pump",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "769e5542759c6bca",
+        "x": 820,
+        "y": 2620,
+        "wires": []
+    },
+    {
+        "id": "10de1506cfaa57ed",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "humidity low",
+        "func": "const level = msg;\nconst json = JSON.parse(\"{“active_pump”:”on”}\");\nreturn json;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 2620,
+        "wires": [
+            [
+                "6a826d6f8d7d39c6",
+                "7940c87b4d43e26a"
+            ]
+        ]
+    },
+    {
+        "id": "3e4520474051d65b",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2500",
+        "payloadType": "num",
+        "x": 190,
+        "y": 2640,
+        "wires": [
+            [
+                "26f3e4822452a0b7"
+            ]
+        ]
+    },
+    {
+        "id": "7940c87b4d43e26a",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "b0f122cacc58c025",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "09d95dada896272c",
+        "path": "/",
+        "pathType": "str",
+        "priority": 1,
+        "queryType": "update",
+        "x": 1150,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "3c7279e1db956d57",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "ad17092f27a8a31a",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"active_pump\":\"on\"}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 2100,
+        "wires": [
+            [
+                "ec9628e114fda7f0"
+            ]
+        ]
+    },
+    {
+        "id": "09d95dada896272c",
+        "type": "database-config",
+        "name": "HydroPonique",
+        "authType": "privateKey",
+        "claims": {},
+        "createUser": false,
+        "useClaims": false
+    },
+    {
+        "id": "769e5542759c6bca",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
